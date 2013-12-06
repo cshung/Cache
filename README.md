@@ -1,2 +1,1 @@
-Cache
-=====
+This is an exercise from an interview, implement a cache that keeps the most recently accessed item and support both add and get in expected O(1) time.
