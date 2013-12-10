@@ -21,7 +21,7 @@ cache::~cache()
 void cache::add(int key, int value)
 {	
 	queue_node<int>* new_queue_node = this->keys->enqueue(key);
-	this->values->add(key, pair<int, queue_node<int>*>(key, new_queue_node));
+	this->values->add(key, pair<int, queue_node<int>*>(value, new_queue_node));
 	if (this->keys->size() > capacity)
 	{
 		int evict_key = this->keys->dequeue();

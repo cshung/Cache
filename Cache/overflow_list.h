@@ -77,7 +77,10 @@ private:
 	public:
 		overflow_list_node(T data) : data(data)
 		{
+			// Rule 1: Always initialize pointer to NULL to avoid random values leading to hard to debug
+			next = NULL;
 		}
+
 		T data;
 		overflow_list_node* next;
 	};

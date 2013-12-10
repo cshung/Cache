@@ -22,7 +22,7 @@ public:
 		this->table[hash_value].add(pair<TKey, TValue>(key, value));
 	}
 
-	bool get(int key, TValue*& value)
+	bool get(TKey key, TValue*& value)
 	{
 		int hash_value = this->hash_function->hash(key, table_size);
 		key_match_predicate match(key);
@@ -48,6 +48,8 @@ public:
 	~hash_table()
 	{
 		delete[] this->table;
+		// Rule 2: Just good practice, set NULL after deletion can ease debugging
+		this->table = NULL;
 	}
 
 	class key_match_predicate : public predicate<pair<TKey, TValue>>
